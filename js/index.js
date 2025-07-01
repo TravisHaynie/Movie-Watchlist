@@ -24,12 +24,15 @@ function getOmdbMovieData() {
                             <img class="movie-img" src="${id.Poster}">
                         </div>
                         <div class="movie-content-container">
-                            <h2 class="name">${id.Title}</h2>
-                            <p class="rate">⭐ ${id.imdbRating}</p>
-                            <p class="genre">${id.Genre}</p>
-                            <p class="time">${id.Runtime}</p>
-                            <button class="btn" aria-label="Add to Watchlist">+</button> Watchlist
-                            <p class="summ">${id.Plot}</p>
+                            <h2 class="name margin">${id.Title}</h2>
+                            <p class="rate margin">⭐ ${id.imdbRating}</p>
+                            <p class="genre margin">${id.Genre}</p>
+                            <p class="time margin">${id.Runtime}</p>
+                            <div class="btn">
+                            <button class="watchlist-btn" aria-label="Add to Watchlist">+</button>
+                            <p class="watchlist margin">Watchlist</p>
+                            </div>
+                            <p class="summ margin">${id.Plot}</p>
                         </div>
                     </div>
                      `

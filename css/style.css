@@ -1,16 +1,108 @@
-body {
+body,html {
     font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+/* universal css */
+
+.white {
+    background-color: white;
+    border: 1px solid lightgray;
+    border-radius: 2px;
+}
+
+.margin {
+    margin: 0;
+}
+
+.padding {
+    padding: 0;
+}
+
+.watchlist {
+    font-size: 13px;
+}
+
+.header-fontsize {
+  font-size: 50px;
+}
+
+.paragraph-font-size {
+
 }
 
 /* header */
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5em 3em;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/movie-img.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: white;
+}
+
+.nav-link {
+    list-style-type: none;
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+
+li > a {
+    text-decoration: none;
+    color: white;
+}
 /* movie-container section */
 .main-content {
     padding: 3em;
 }
 
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top:313px;
+    padding: 0 3em;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.search-btn {
+    padding: 0 3em;
+}
+
+.search-input {
+    width: 100%;
+    padding: 1em 0;
+    background-image: url(../img/icon-img.png);
+    background-repeat: no-repeat;
+    background-position: 2px;
+    background-color: white;
+    padding-left:40px;
+}
+
+.search-input:hover {
+    background-color: white;
+}
+
 .content-wrapper {
     display: flex;
     flex-direction: row;
+    padding: 2em 0;
+    border-bottom:2px solid rgba(200, 197, 197, 0.464)
 }
 
 .movie-container {
@@ -21,15 +113,18 @@ body {
 .movie-content-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: 
-    " name rate ."
-    " time genr btnn"
-    " summ summ summ";
+    grid-template-areas:
+        " name rate ."
+        " time genr btnn"
+        " summ summ summ";
     gap: 1em;
+    padding: 0 3em;
+    align-items: center;
 }
 
 .name {
     grid-area: name;
+    font-size: 25px;
 }
 
 .rate {
@@ -44,30 +139,35 @@ body {
     grid-area: genr;
 }
 
-.btn {
-    grid-area: btnn;
+.watchlist-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 20px;
-    height: 20px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     padding: 0;
     margin: 0;
+    background-color: black;
+    color: white
+}
 
+.btn {
+    grid-area: btnn;
+    display: flex;
+    flex-direction: row;
 }
 
 .summ {
     grid-area: summ;
+    font-size: 20px;
 }
 
-.movie-content {
-    
-}
+.movie-content {}
 
 /* images */
 
 .movie-img {
-  width: 196px;
+    width: 196px;
 
 }

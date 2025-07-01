@@ -4,17 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movie Search</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=search" />
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
-    <header>
-    </header>
-    <main class="main-content">
-        <label for="search-bar"></label>
-        <Input id="search-bar" type="search" placeholder="Search Movie"></Input>
-        <button id="button" type="submit">Search</button>
+        <header class="header">
+            <h1 class="header-fontsize">Find Your Film</h1>
+            <nav>
+                <ul>
+                <li class="nav-link"><a href="watchlist.html">Watchlist</a></li>  
+                </ul>
+            </nav>
+        </header>
+        <div class="search-bar-container">
+            <Input id="search-bar" type="search" class="search-input white"  placeholder="Search Movie"></Input>
+            <button id="button" type="submit" class="search-btn white">Search</button>
+        </div>
+        <main class="main-content">
             <div id="movie-container" class="movie-container"></div>
-    </main>
+        </main>
     <script src="./js/index.js"></script>
 </body>
 </html>
