@@ -1,0 +1,73 @@
+body {
+    font-size: 20px;
+}
+
+/* header */
+/* movie-container section */
+.main-content {
+    padding: 3em;
+}
+
+.content-wrapper {
+    display: flex;
+    flex-direction: row;
+}
+
+.movie-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.movie-content-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: 
+    " name rate ."
+    " time genr btnn"
+    " summ summ summ";
+    gap: 1em;
+}
+
+.name {
+    grid-area: name;
+}
+
+.rate {
+    grid-area: rate;
+}
+
+.time {
+    grid-area: time;
+}
+
+.genre {
+    grid-area: genr;
+}
+
+.btn {
+    grid-area: btnn;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    padding: 0;
+    margin: 0;
+
+}
+
+.summ {
+    grid-area: summ;
+}
+
+.movie-content {
+    
+}
+
+/* images */
+
+.movie-img {
+  width: 196px;
+
+}
