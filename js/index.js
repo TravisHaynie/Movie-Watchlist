@@ -1,5 +1,7 @@
 const movieContainer = document.getElementById('movie-container');
 const searchButton = document.getElementById('button');
+const modal = document.getElementById('modal');
+
 
 searchButton.addEventListener('click', getOmdbMovieData);
 
@@ -64,9 +66,28 @@ async function getOmdbMovieData() {
                 runtime: this.dataset.runtime
             };
 
-            const currentList = JSON.parse(localStorage.getItem('watchlist')) ;
+            const currentList = JSON.parse(localStorage.getItem('watchlist'));
+            const alreadAddedMovie = currentList.some(movie => movie.id === movieObj.id)
+
+            if (alreadAddedMovie) {
+                console.log('movie already in watchlist');
+                modal.innerHTML = "Already in Watchlist";
+                modal.style.display = "flex";
+                setTimeout(() => {
+                    modal.style.display = "none";
+                }, 2000)
+                return;
+            }
+
             currentList.push(movieObj);
             localStorage.setItem('watchlist', JSON.stringify(currentList));
+
+            modal.innerHTML = "added to watchlist"
+            modal.style.display = "flex";
+
+            setTimeout(() => {
+                modal.style.display = "none";
+            }, 2000)
         });
     });
 }
