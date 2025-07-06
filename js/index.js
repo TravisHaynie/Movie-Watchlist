@@ -66,7 +66,7 @@ async function getOmdbMovieData() {
                 runtime: this.dataset.runtime
             };
 
-            const currentList = JSON.parse(localStorage.getItem('watchlist'));
+            const currentList = JSON.parse(localStorage.getItem('watchlist')) || [];
             const alreadAddedMovie = currentList.some(movie => movie.id === movieObj.id)
 
             if (alreadAddedMovie) {
