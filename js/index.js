@@ -10,14 +10,14 @@ async function getOmdbMovieData() {
     const title = searchBar.value;
     movieContainer.innerHTML = '';
 
-    const res = await fetch(`http://www.omdbapi.com/?apikey=311fbec3&s=${encodeURIComponent(title)}`);
+    const res = await fetch(`https://www.omdbapi.com/?apikey=311fbec3&s=${encodeURIComponent(title)}`);
     const data = await res.json();
     const movies = data.Search.slice(0, 3);
 
     let renderMovie = '';
 
     for (let movie of movies) {
-        const details = await fetch(`http://www.omdbapi.com/?apikey=311fbec3&i=${movie.imdbID}`);
+        const details = await fetch(`https://www.omdbapi.com/?apikey=311fbec3&i=${movie.imdbID}`);
         const id = await details.json();
 
         renderMovie += `
