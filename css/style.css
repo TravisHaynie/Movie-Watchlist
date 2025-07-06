@@ -7,6 +7,7 @@ html {
 
 .body {
     position: relative;
+    min-width: 800px;
 }
 
 /* universal css */
@@ -19,18 +20,6 @@ html {
 
 .margin {
     margin: 0;
-}
-
-.padding {
-    padding: 0;
-}
-
-.watchlist {
-    font-size: 13px;
-}
-
-.header-fontsize {
-    font-size: 50px;
 }
 
 /* modal */
@@ -70,24 +59,21 @@ html {
     color: white;
 }
 
+.h1-fontsize {
+    font-size: 50px;
+}
+
 .nav-link {
     list-style-type: none;
 }
 
-.material-symbols-outlined {
-    font-variation-settings:
-        'FILL' 0,
-        'wght' 400,
-        'GRAD' 0,
-        'opsz' 24
-}
-
-li>a {
+li > a {
     text-decoration: none;
     color: white;
 }
 
 /* movie-container section */
+
 .main-content {
     padding: 3em;
 }
@@ -159,6 +145,10 @@ li>a {
 
 .genre {
     grid-area: genr;
+}
+
+.watchlist {
+    font-size: 13px;
 }
 
 .watchlist-btn {
