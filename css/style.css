@@ -166,6 +166,22 @@ li > a {
     margin-right: 5px;
 }
 
+.remove-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: none;
+    padding: 0;
+    padding-bottom: 2px;
+    margin: 0;
+    background-color: black;
+    color: white;
+    margin-right: 5px;
+}
+
 
 .btn {
     grid-area: btnn;
