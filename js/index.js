@@ -41,7 +41,7 @@ async function getOmdbMovieData() {
                             data-img="${id.Poster}"
                             data-plot="${id.Plot}"
                         >+</button>
-                        <p class="watchlist margin">Watchlist</p>
+                        <p class="watchlist margin">My Watchlist</p>
                     </div>
                     <p class="summ margin">${id.Plot}</p>
                 </div>

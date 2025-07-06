@@ -154,7 +154,6 @@ li > a {
 .watchlist-btn {
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 15px;
     height: 15px;
     border-radius: 50%;
@@ -169,7 +168,6 @@ li > a {
 .remove-btn {
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 15px;
     height: 15px;
     border-radius: 50%;
