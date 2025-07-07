@@ -63,8 +63,6 @@ html {
     color: white;
 }
 
-
-
 .nav-link {
     list-style-type: none;
 }
@@ -151,14 +149,16 @@ li > a {
 }
 
 .watchlist {
-    font-size: 13px;
+    font-size: 20px;
 }
 
 .watchlist-btn {
     display: flex;
     justify-content: center;
-    width: 15px;
-    height: 15px;
+    align-items: center;
+    width: 18px;
+    text-align: center;
+    height: 18px;
     border-radius: 50%;
     border: none;
     padding: 0;
@@ -171,8 +171,9 @@ li > a {
 .remove-btn {
     display: flex;
     justify-content: center;
-    width: 15px;
-    height: 15px;
+    align-items: center;
+    width: 18px;
+    height: 18px;
     border-radius: 50%;
     border: none;
     padding: 0;
@@ -187,6 +188,7 @@ li > a {
     grid-area: btnn;
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
 .summ {

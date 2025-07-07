@@ -20,6 +20,7 @@ function renderMovieDataTooPage() {
                     <p class="time margin">${movie.runtime}</p>
                     <div class="btn">
                         <button class="remove-btn" data-id="${movie.id}">-</button>
+                        <p class="watchlist margin">Remove</p>
                     </div>
                     <p class="summ margin">${movie.summary}</p>
                 </div>
