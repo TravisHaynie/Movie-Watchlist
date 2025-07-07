@@ -12,6 +12,10 @@ html {
 
 /* universal css */
 
+.h1-fontsize {
+    font-size: 70px;
+}
+
 .white {
     background-color: white;
     border: 1px solid lightgray;
@@ -51,7 +55,7 @@ html {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 5em 3em;
+    padding: 4em 3em;
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/movie-img.png);
     background-size: cover;
     background-position: center;
@@ -59,9 +63,7 @@ html {
     color: white;
 }
 
-.h1-fontsize {
-    font-size: 50px;
-}
+
 
 .nav-link {
     list-style-type: none;
@@ -70,6 +72,7 @@ html {
 li > a {
     text-decoration: none;
     color: white;
+    font-size: 25px;
 }
 
 /* movie-container section */
