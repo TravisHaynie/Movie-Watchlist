@@ -2,24 +2,24 @@ const movieContainer = document.getElementById('movie-container');
 const searchButton = document.getElementById('button');
 const modal = document.getElementById('modal');
 
-
+// Search Event Triggered
 searchButton.addEventListener('click', getOmdbMovieData);
 
 async function getOmdbMovieData() {
     const searchBar = document.getElementById('search-bar');
     const title = searchBar.value;
     movieContainer.innerHTML = '';
-
+    // Fetched Movie Title
     const res = await fetch(`https://www.omdbapi.com/?apikey=311fbec3&s=${encodeURIComponent(title)}`);
     const data = await res.json();
     const movies = data.Search.slice(0, 3);
 
     let renderMovie = '';
-
+    // Looping over fetched movie title data and calling for a second fetch with movies ID for more detail
     for (let movie of movies) {
         const details = await fetch(`https://www.omdbapi.com/?apikey=311fbec3&i=${movie.imdbID}`);
         const id = await details.json();
-
+         
         renderMovie += `
             <div class="content-wrapper">
                 <div class="img-container">
@@ -50,7 +50,7 @@ async function getOmdbMovieData() {
     }
 
     movieContainer.innerHTML = renderMovie;
-
+    // Add movie to watchlist logic
     const watchlistButtons = document.querySelectorAll('.watchlist-btn');
     watchlistButtons.forEach(button => {
         button.addEventListener('click', function (e) {
@@ -67,10 +67,11 @@ async function getOmdbMovieData() {
             };
 
             const currentList = JSON.parse(localStorage.getItem('watchlist')) || [];
+            // Returns ture/false if movie is in watchlist
             const alreadAddedMovie = currentList.some(movie => movie.id === movieObj.id)
-
+            // conditional set if movie is currently in watchlist
             if (alreadAddedMovie) {
-                console.log('movie already in watchlist');
+                // modal content
                 modal.innerHTML = "Already in Watchlist";
                 modal.style.display = "flex";
                 setTimeout(() => {
@@ -81,8 +82,8 @@ async function getOmdbMovieData() {
 
             currentList.push(movieObj);
             localStorage.setItem('watchlist', JSON.stringify(currentList));
-
-            modal.innerHTML = "added to watchlist"
+            // modal content
+            modal.innerHTML = "added to watchlist";
             modal.style.display = "flex";
 
             setTimeout(() => {

@@ -6,7 +6,7 @@ const searchButton = document.getElementById('button');
 function renderMovieDataTooPage() {
     const data = JSON.parse(localStorage.getItem('watchlist')) || [];
     movieContainer.innerHTML = ''; 
-
+    // LocalStorage data rendered to page
     data.forEach((movie) => {
         movieContainer.innerHTML += `
             <div class="content-wrapper">
@@ -27,7 +27,7 @@ function renderMovieDataTooPage() {
             </div>
         `;
     });
-
+    // Remove Button logic
     const removeButtons = document.querySelectorAll('.remove-btn');
     removeButtons.forEach(btn => {
         btn.addEventListener('click', function () {
