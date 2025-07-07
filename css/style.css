@@ -55,7 +55,7 @@ html {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 4em 3em;
+    padding: 4em 5em;
     background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../img/movie-img.png);
     background-size: cover;
     background-position: center;
@@ -78,7 +78,7 @@ li > a {
 /* movie-container section */
 
 .main-content {
-    padding: 3em;
+    padding: 3em 5em;
 }
 
 .search-bar-container {
@@ -86,7 +86,7 @@ li > a {
     justify-content: center;
     position: absolute;
     top: 313px;
-    padding: 0 3em;
+    padding: 0 5em;
     width: 100%;
     box-sizing: border-box;
 }
