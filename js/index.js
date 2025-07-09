@@ -10,6 +10,8 @@ async function getOmdbMovieData() {
     const title = searchBar.value;
     movieContainer.innerHTML = '';
     // Fetched Movie Title
+    try {
+
     const res = await fetch(`https://www.omdbapi.com/?apikey=311fbec3&s=${encodeURIComponent(title)}`);
     const data = await res.json();
     const movies = data.Search.slice(0, 3);
@@ -27,9 +29,9 @@ async function getOmdbMovieData() {
                 </div>
                 <div class="movie-content-container">
                     <h2 class="name margin">${id.Title}</h2>
-                    <p class="rate margin">⭐ ${id.imdbRating}</p>
-                    <p class="genre margin">${id.Genre}</p>
-                    <p class="time margin">${id.Runtime}</p>
+                    <p class="rate margin font-size">⭐${id.imdbRating}</p>
+                    <p class="genre margin font-size">${id.Genre}</p>
+                    <p class="time margin font-size">${id.Runtime}</p>
                     <div class="btn">
                         <button class="watchlist-btn"
                             type="button"
@@ -41,9 +43,9 @@ async function getOmdbMovieData() {
                             data-img="${id.Poster}"
                             data-plot="${id.Plot}"
                         >+</button>
-                        <p class="watchlist margin">My Watchlist</p>
+                        <p class="margin font-size">Watchlist</p>
                     </div>
-                    <p class="summ margin">${id.Plot}</p>
+                    <p class="summ margin font-size">${id.Plot}</p>
                 </div>
             </div>
         `;
@@ -91,4 +93,8 @@ async function getOmdbMovieData() {
             }, 2000)
         });
     });
+    } catch (err) {
+        console.log(err)
+        movieContainer.innerHTML = `<div class="catch-err-message">Unable to find what your looking for.Please try another search</div>`
+    }
 }
