@@ -15,14 +15,14 @@ function renderMovieDataTooPage() {
                 </div>
                 <div class="movie-content-container">
                     <h2 class="name margin">${movie.title}</h2>
-                    <p class="rate margin">⭐ ${movie.rating}</p>
-                    <p class="genre margin">${movie.genre}</p>
-                    <p class="time margin">${movie.runtime}</p>
+                    <p class="rate margin font-size">⭐ ${movie.rating}</p>
+                    <p class="genre margin font-size">${movie.genre}</p>
+                    <p class="time margin font-size">${movie.runtime}</p>
                     <div class="btn">
                         <button class="remove-btn" data-id="${movie.id}">-</button>
-                        <p class="watchlist margin">Remove</p>
+                        <p class="watchlist margin font-size">Remove</p>
                     </div>
-                    <p class="summ margin">${movie.summary}</p>
+                    <p class="summ margin font-size">${movie.summary}</p>
                 </div>
             </div>
         `;
