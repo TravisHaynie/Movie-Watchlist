@@ -75,7 +75,7 @@ html {
     list-style-type: none;
 }
 
-li > a {
+li>a {
     text-decoration: none;
     color: white;
     font-size: 25px;
@@ -99,7 +99,7 @@ li > a {
 
 .search-btn {
     padding: 0 3em;
-    border-radius: 0px 10px 10px 0px
+    border-radius: 0px 10px 10px 0px;
 }
 
 .search-input {
@@ -112,7 +112,7 @@ li > a {
     padding-left: 40px;
     font-size: 15px;
     font-weight: bold;
-    border-radius: 10px 0px 0px 10px
+    border-radius: 10px 0px 0px 10px;
 }
 
 .search-input:focus {
@@ -138,8 +138,8 @@ li > a {
 
 .movie-content-container {
     display: grid;
-    grid-template-columns: 250px 225px 350px;
-    grid-template-rows: 50px  75px 125px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 50px 75px 125px;
     grid-template-areas:
         " name rate ."
         " time genr btnn"

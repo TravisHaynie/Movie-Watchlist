@@ -1,14 +1,11 @@
-const data = JSON.parse(localStorage.getItem('watchlist'));
-const movieContainer = document.getElementById('movie-container');
-const movieContent = document.getElementById('movie-content');
-const searchButton = document.getElementById('button');
+const movieContainer = document.getElementById("movie-container");
 
-function renderMovieDataTooPage() {
-    const data = JSON.parse(localStorage.getItem('watchlist')) || [];
-    movieContainer.innerHTML = ''; 
-    // LocalStorage data rendered to page
-    data.forEach((movie) => {
-        movieContainer.innerHTML += `
+function renderMovieDataToPage() {
+  const data = JSON.parse(localStorage.getItem("watchlist")) || [];
+  movieContainer.innerHTML = "";
+  // LocalStorage data rendered to page
+  data.forEach((movie) => {
+    movieContainer.innerHTML += `
             <div class="content-wrapper">
                 <div class="img-container">
                     <img class="movie-img" src="${movie.img}">
@@ -26,23 +23,26 @@ function renderMovieDataTooPage() {
                 </div>
             </div>
         `;
+  });
+  // Remove Button logic
+  // Get all of the buttons
+  const removeButtons = document.querySelectorAll(".remove-btn");
+  // Add click event on buttons
+  removeButtons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      // get moivie id
+      const movieId = this.dataset.id;
+      // get watchlist data from localstorage
+      let watchlistData = JSON.parse(localStorage.getItem("watchlist")) || [];
+      // applying filter method to check for movie ids that do not match
+      watchlistData = watchlistData.filter(function (movie) {
+        return movie.id !== movieId;
+      });
+      // update local storage
+      localStorage.setItem("watchlist", JSON.stringify(watchlistData));
+      renderMovieDataToPage();
     });
-    // Remove Button logic
-    const removeButtons = document.querySelectorAll('.remove-btn');
-    removeButtons.forEach(btn => {
-        btn.addEventListener('click', function () {
-            const idToRemove = this.dataset.id;
-            let currentList = JSON.parse(localStorage.getItem('watchlist')) || [];
-
-            currentList = currentList.filter(movie => movie.id !== idToRemove);
-            localStorage.setItem('watchlist', JSON.stringify(currentList));
-            renderMovieDataTooPage();
-        });
-    });
+  });
 }
 
-renderMovieDataTooPage();
-
-
-
-
+renderMovieDataToPage();
